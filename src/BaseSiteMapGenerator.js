@@ -1,17 +1,17 @@
-import map from "lodash/map";
-import sortBy from "lodash/sortBy";
-import xml from "xml";
-import dayjs from "dayjs";
-import path from "path";
+import map from 'lodash/map';
+import sortBy from 'lodash/sortBy';
+import xml from 'xml';
+import dayjs from 'dayjs';
+import path from 'path';
 
-import * as utils from "./utils";
+import * as utils from './utils';
 
 // Sitemap specific xml namespace declarations that should not change
 const XMLNS_DECLS = {
     _attr: {
         xmlns: `http://www.sitemaps.org/schemas/sitemap/0.9`,
-        "xmlns:image": `http://www.google.com/schemas/sitemap-image/1.1`,
-    },
+        'xmlns:image': `http://www.google.com/schemas/sitemap-image/1.1`
+    }
 };
 
 export default class BaseSiteMapGenerator {
@@ -33,7 +33,7 @@ export default class BaseSiteMapGenerator {
                     id: id,
                     // Using negative here to sort newest to oldest
                     ts: -(self.nodeTimeLookup[id] || 0),
-                    node: node,
+                    node: node
                 };
             },
             []
@@ -44,7 +44,7 @@ export default class BaseSiteMapGenerator {
         const urlElements = map(sortedNodes, `node`);
         const data = {
             // Concat the elements to the _attr declaration
-            urlset: [XMLNS_DECLS].concat(urlElements),
+            urlset: [XMLNS_DECLS].concat(urlElements)
         };
 
         // Return the xml
@@ -90,18 +90,18 @@ export default class BaseSiteMapGenerator {
     }
 
     createUrlNodeFromDatum(url, datum) {
-        let node, imgNode;
+        let node; let imgNode;
 
         node = {
             url: [
-                { loc: url },
+                {loc: url},
                 {
                     lastmod: dayjs(
                         this.getLastModifiedForDatum(datum),
                         this.ISO8601_FORMAT
-                    ).toISOString(),
-                },
-            ],
+                    ).toISOString()
+                }
+            ]
         };
 
         imgNode = this.createImageNodeFromDatum(datum);
@@ -125,8 +125,8 @@ export default class BaseSiteMapGenerator {
 
         // Create the weird xml node syntax structure that is expected
         imageEl = [
-            { "image:loc": image },
-            { "image:caption": path.basename(image) },
+            {'image:loc': image},
+            {'image:caption': path.basename(image)}
         ];
 
         // Return the node to be added to the url xml node

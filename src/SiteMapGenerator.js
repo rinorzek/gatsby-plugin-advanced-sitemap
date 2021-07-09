@@ -1,5 +1,5 @@
-import extend from "lodash/extend";
-import BaseSiteMapGenerator from "./BaseSiteMapGenerator";
+import extend from 'lodash/extend';
+import BaseSiteMapGenerator from './BaseSiteMapGenerator';
 
 export default class SiteMapGenerator extends BaseSiteMapGenerator {
     constructor(opts, type) {
