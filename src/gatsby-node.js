@@ -1,7 +1,7 @@
 import path from 'path'
 import url from 'url'
-import uniqBy from 'lodash/uniqBy'
-import merge from 'lodash/merge'
+import uniqBy from 'lodash.uniqBy'
+import merge from 'lodash.merge'
 
 import defaultOptions, { DEFAULTMAPPING, DEFAULTQUERY, PUBLICPATH, RESOURCESFILE, XSLFILE } from './defaults'
 import Manager from './SiteMapManager'

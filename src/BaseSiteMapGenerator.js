@@ -1,4 +1,4 @@
-import sortBy from "lodash/sortBy"
+import sortBy from "lodash.sortBy"
 import xml from "xml"
 import dayjs from "dayjs"
 import path from "path"

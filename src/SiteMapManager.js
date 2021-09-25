@@ -1,6 +1,6 @@
 import SiteMapIndexGenerator from './IndexMapGenerator'
 import SiteMapGenerator from './SiteMapGenerator'
-import uniq from 'lodash/uniq'
+import uniq from 'lodash.uniq'
 
 export default class SiteMapManager {
     constructor(options) {

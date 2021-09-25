@@ -1,4 +1,4 @@
-import extend from 'lodash/extend'
+import assignin from 'lodash.assignin'
 import BaseSiteMapGenerator from './BaseSiteMapGenerator'
 
 export default class SiteMapGenerator extends BaseSiteMapGenerator {
@@ -7,6 +7,6 @@ export default class SiteMapGenerator extends BaseSiteMapGenerator {
 
         this.name = type || `pages`
 
-        extend(this, opts)
+        assignin(this, opts)
     }
 }

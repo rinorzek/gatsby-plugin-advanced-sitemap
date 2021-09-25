@@ -51,7 +51,12 @@
     "@babel/runtime": "7.14.0",
     "dayjs": "^1.10.6",
     "fs-extra": "10.0.0",
-    "lodash": "4.17.21",
+    "lodash.assignin": "^4.2.0",
+    "lodash.difference": "^4.5.0",
+    "lodash.merge": "^4.6.2",
+    "lodash.sortby": "^4.7.0",
+    "lodash.uniq": "^4.5.0",
+    "lodash.uniqby": "^4.7.0",
     "pify": "^5.0.0",
     "xml": "^1.0.1"
   }

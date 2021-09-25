@@ -1,5 +1,5 @@
-import uniqBy from "lodash/uniqBy"
-import difference from 'lodash/difference'
+import uniqBy from "lodash.uniqBy"
+import difference from 'lodash.difference'
 
 import url from 'url'
 
