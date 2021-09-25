@@ -1,6 +1,5 @@
 import xml from "xml"
 import dayjs from "dayjs"
-import url from "url"
 import path from "path"
 
 import * as utils from "./utils"
@@ -41,7 +40,7 @@ export default class SiteMapIndexGenerator {
                 .replace(/^\//, ``)
             const siteMapUrl = source.url
                 ? source.url
-                : url.resolve(siteUrl, path.join(pathPrefix, filePath))
+                : new URL(path.join(pathPrefix, filePath), siteUrl).toString()
             const lastModified = source.url
                 ? dayjs(new Date(), this.ISO8601_FORMAT).toISOString()
                 : this.types[source.sitemap].lastModified ||

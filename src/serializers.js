@@ -1,8 +1,6 @@
 import uniqBy from "lodash.uniqBy"
 import difference from 'lodash.difference'
 
-import url from 'url'
-
 const serializeMarkdownNodes = (node) => {
     if (!node.slug && !node.fields.slug) {
         throw Error(`\`slug\` is a required field`)
@@ -82,7 +80,7 @@ const addPageNodes = (parsedNodesArray, allSiteNodes, siteUrl) => {
 
     addedPageNodes.pages = remainingNodes.map(({ node }) => {
         return {
-            url: url.resolve(siteUrl, node.url),
+            url: new URL(node.url,siteUrl).toString(),
             node: node,
         }
     })
