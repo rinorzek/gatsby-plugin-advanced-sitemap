@@ -7,7 +7,7 @@ module.exports = {
             experimentalObjectRestSpread: true,
         },
     },
-    plugins: [`ghost`, `react`],
+    plugins: [`ghost`, `react`, `jest`],
     extends: [
         `plugin:ghost/node`,
         `plugin:ghost/ember`,
@@ -56,4 +56,12 @@ module.exports = {
             },
         ],
     },
+    overrides: [
+        {
+            files: [`**/*.spec.js`, `**/*.test.js`],
+            env: {
+                jest: true,
+            },
+        },
+    ],
 }

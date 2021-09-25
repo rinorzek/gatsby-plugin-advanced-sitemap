@@ -1,4 +1,3 @@
-import map from "lodash/map"
 import uniqBy from "lodash/uniqBy"
 import difference from 'lodash/difference'
 
@@ -35,7 +34,7 @@ const serializeSources = ({ mapping, additionalSitemaps = [] }) => {
         sitemaps.push(mapping[resourceType])
     }
 
-    sitemaps = map(sitemaps, (source) => {
+    sitemaps = sitemaps.map((source) => {
         // Ignore the key and only return the name and
         // source as we need those to create the index
         // and the belonging sources accordingly
