@@ -32,6 +32,10 @@ const DEFAULTMAPPING = {
 };
 let siteURL;
 
+exports.onPreInit = () => {
+  console.log('Testing...')
+}
+
 const copyStylesheet = async ({siteUrl, pathPrefix, indexOutput}) => {
     const siteRegex = /(\{\{blog-url\}\})/g;
 
