@@ -156,6 +156,7 @@ const serializeSources = ({mapping, additionalSitemaps = []}) => {
 
     sitemaps = _.uniqBy(sitemaps, `name`);
 
+    console.log('sitemaps', sitemaps)
     return sitemaps;
 };
 
