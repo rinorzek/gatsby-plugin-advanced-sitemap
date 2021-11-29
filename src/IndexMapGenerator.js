@@ -29,10 +29,6 @@ export default class SiteMapIndexGenerator {
     }
 
     generateSiteMapUrlElements({sources, siteUrl, pathPrefix, resourcesOutput}) {
-        console.log('sources', sources)
-        console.log('siteUrl', siteUrl)
-        console.log('pathPrefix', pathPrefix)
-        console.log('resourcesOutput', resourcesOutput)
         return _.map(sources, (source) => {
             const filePath = resourcesOutput.replace(/:resource/, source.name).replace(/^\//, ``);
             const siteMapUrl = source.url ? source.url : new URL(path.join(pathPrefix, filePath), siteUrl).toString();
