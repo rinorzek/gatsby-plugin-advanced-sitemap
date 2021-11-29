@@ -7,7 +7,7 @@ import Manager from './SiteMapManager';
 import * as utils from './utils';
 
 const PUBLICPATH = `./public`;
-const RESOURCESFILE = `/sitemap-:resource.xml`;
+const RESOURCESFILE = `/:resource-sitemap.xml`;
 const XSLFILE = path.resolve(__dirname, `./static/sitemap.xsl`);
 const DEFAULTQUERY = `{
   allSitePage {
