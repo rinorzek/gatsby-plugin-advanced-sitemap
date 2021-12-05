@@ -88,7 +88,18 @@ export default class BaseSiteMapGenerator {
         node = {
             url: [
                 {loc: url},
-                {lastmod: moment(this.getLastModifiedForDatum(datum), moment.ISO_8601).toISOString()}
+                {lastmod: moment(this.getLastModifiedForDatum(datum), moment.ISO_8601).toISOString()},
+                {
+                    "xhtml:link": [
+                        {
+                            _attr: {
+                                rel: "alternate",
+                                hreflang: "de",
+                                href: "http://www.example.com/deutsch/page.html",
+                            },
+                        },
+                    ],
+                },
             ]
         };
 
