@@ -46,7 +46,6 @@ export default class BaseSiteMapGenerator {
     }
 
     addUrl(url, datum) {
-        console.log("node", datum);
         const node = this.createUrlNodeFromDatum(url, datum);
 
         if (node) {
