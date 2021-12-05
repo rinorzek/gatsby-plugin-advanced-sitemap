@@ -54,7 +54,7 @@ export default class SiteMapManager {
     // like we do in Ghost core
     addUrls(type, obj) {
         const {url, node, alternates} = obj
-        console.log("alternates", obj);
+        // console.log("alternates", obj);
         return this[type].addUrl(url, node);
     }
 }
