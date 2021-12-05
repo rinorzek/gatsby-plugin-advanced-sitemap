@@ -86,15 +86,15 @@ export default class BaseSiteMapGenerator {
         let node, imgNode;
         const alternates = datum.alternates
             ? datum.alternates.map((alternate) => ({
-                  _attr: {
-                      rel: "alternate",
-                      hreflang: alternate.lang,
-                      href: alternate.url,
+                  "xhtml:link": {
+                      _attr: {
+                          rel: "alternate",
+                          hreflang: alternate.lang,
+                          href: alternate.url,
+                      },
                   },
               }))
             : [];
-        
-        console.log("alts", alternates);
 
         node = {
             url: [
@@ -105,9 +105,7 @@ export default class BaseSiteMapGenerator {
                         moment.ISO_8601
                     ).toISOString(),
                 },
-                {
-                    "xhtml:link": alternates,
-                },
+                ...alternates,
             ],
         };
 
