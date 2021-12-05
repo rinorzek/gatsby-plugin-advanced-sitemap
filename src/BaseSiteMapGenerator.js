@@ -85,23 +85,29 @@ export default class BaseSiteMapGenerator {
 
     createUrlNodeFromDatum(url, datum) {
         let node, imgNode;
+        const alternates = datum.alternates
+            ? datum.alternates.map((alternate) => ({
+                  _attr: {
+                      rel: "alternate",
+                      hreflang: alternate.lang,
+                      href: alternate.url,
+                  },
+              }))
+            : [];
 
         node = {
             url: [
-                {loc: url},
-                {lastmod: moment(this.getLastModifiedForDatum(datum), moment.ISO_8601).toISOString()},
+                { loc: url },
                 {
-                    "xhtml:link": [
-                        {
-                            _attr: {
-                                rel: "alternate",
-                                hreflang: "de",
-                                href: "http://www.example.com/deutsch/page.html",
-                            },
-                        },
-                    ],
+                    lastmod: moment(
+                        this.getLastModifiedForDatum(datum),
+                        moment.ISO_8601
+                    ).toISOString(),
                 },
-            ]
+                {
+                    "xhtml:link": alternates,
+                },
+            ],
         };
 
         imgNode = this.createImageNodeFromDatum(datum);
