@@ -91,7 +91,7 @@ export default class BaseSiteMapGenerator {
                       _attr: {
                           rel: "alternate",
                           hreflang: alternate.lang,
-                          href: alternate.url,
+                          href: alternate.url?.endsWith('/') ? alternate.url : `${alternate.url}/`,
                       },
                   },
               }))
