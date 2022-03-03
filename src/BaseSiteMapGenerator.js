@@ -96,6 +96,8 @@ export default class BaseSiteMapGenerator {
                   },
               }))
             : [];
+        
+        console.log("alternates", datum.alternates);
 
         node = {
             url: [
